@@ -1,0 +1,117 @@
+<!--doctype html-->
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro de alunos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+
+</head>
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+
+        <body>
+
+            <div class="conteiner">
+                <div class="card-body">
+                    <div class="jumbotron jumbotron-fluid">
+                        <h1>Cadastro de Alunos</h1>
+                        <Form action="cadaluno.php" method="post" enctype="multipart/form data" name="formulario">
+
+                            <p>
+                                Matrícula:
+                                <input type="text" class="form-control" name="matricula" size="50" maxlength="50">
+                            </p>
+
+                            <p>
+                                Nome:
+                                <input type="text" class="form-control" name="nome" size="50" maxlength="50">
+                            </p>
+
+                            <p>
+                                Endereço:
+                                <input type="text" class="form-control" name="endereco" size="50" maxlength="50">
+                            </p>
+
+                            <p>
+                                Cidade:
+                                <input type="text" class="form-control" name="cidade" size="50" maxlength="50">
+                            </p>
+
+                            <p>
+                                Código do Curso:
+                                <input type="text" class="form-control" name="codcurso" size="50" maxlength="50">
+                            </p>
+
+                            <p>
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-dark btn-lg btn-block" onclick="validar()">Enviar</button>
+                                </div>
+                            </p>
+
+                        </Form>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </body>
+    </div>
+</div>
+
+<script>
+    /*Função validar */
+
+    function validar(){
+
+        //pegando o valor da matricula pelo name
+        var matricula = formulario.matricula;
+        var nome = formulario.nome;
+        var endereco = formulario.endereco;
+        var cidade = formulario.cidade;
+        var codcurso = formulario.codcurso;
+        //Verifica se a matricula esta vazia
+        if (matricula.value == ""){
+            //Caixa de mensagem
+            alert ("Matrícula não informado");
+            //Deixa o input com o focus
+            matricula.focus();
+            return;
+        }
+        //verifica se o nome esta vazio
+        if (nome.value == ""){
+            //Caixa de mensagem
+            alert ("Nome não informado");
+            //Deixa o input com o focus
+            nome.focus();
+            return;
+        }
+
+        if (endereco.value == ""){
+            alert ("Endereço não informado");
+            endereco.focus();
+            return;
+        }
+
+        if (cidade.value == ""){
+            alert ("Cidade não informada");
+            cidade.focus();
+            return;
+        }
+
+        if (codcurso.value == ""){
+            alert ("Código do Curso não informado");
+            codcurso.focus();
+            return;
+        }
+
+        formulario.submit();
+    }
+
+</script>
+
+</html>
