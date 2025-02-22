@@ -1,2 +1,2 @@
 # Project_School
-School system developed in PHP, CSS and HTML
+Sistema de escola desenvolvido em HTML, CSS, PHP e Javascript
